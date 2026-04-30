@@ -1,0 +1,256 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="100%" height="100%">
+  <style>
+    .unit-p {
+      animation: headBob 6s infinite step-end;
+    }
+    .heatsink-left {
+      animation: heatL 6s infinite step-end;
+    }
+    .heatsink-right {
+      animation: heatR 6s infinite step-end;
+    }
+    .visor-idle {
+      animation: idleVis 6s infinite step-end;
+    }
+    .seg {
+      opacity: 0;
+    }
+    .s1 { animation: s1Anim 6s infinite step-end; }
+    .s2 { animation: s2Anim 6s infinite step-end; }
+    .s3 { animation: s3Anim 6s infinite step-end; }
+    .s4 { animation: s4Anim 6s infinite step-end; }
+    
+    .port { fill: #27272a; }
+    .p1 { animation: pAnim 6s infinite step-end; }
+    .p2 { animation: pAnim 6s infinite step-end 0.2s; }
+    .p3 { animation: pAnim 6s infinite step-end 0.4s; }
+    .p4 { animation: pAnim 6s infinite step-end 0.6s; }
+
+    /* Phase 1 & 3: Subtle floating | Phase 2: Rigid vibration */
+    @keyframes headBob {
+      0% { transform: translateY(0); }
+      5% { transform: translateY(1px); }
+      10% { transform: translateY(0); }
+      15% { transform: translateY(1px); }
+      20% { transform: translateY(0); }
+      22% { transform: translateY(-1px); }
+      25% { transform: translateY(1px); }
+      31% { transform: translateY(0); }
+      36% { transform: translateY(-1px); }
+      42% { transform: translateY(1px); }
+      47% { transform: translateY(0); }
+      53% { transform: translateY(-1px); }
+      58% { transform: translateY(1px); }
+      64% { transform: translateY(0); }
+      70% { transform: translateY(-1px); }
+      75% { transform: translateY(1px); }
+      80% { transform: translateY(0); }
+      85% { transform: translateY(1px); }
+      90% { transform: translateY(0); }
+      95% { transform: translateY(1px); }
+      100% { transform: translateY(0); }
+    }
+
+    /* Phase 2: Heatsinks extract and lock/vibrate */
+    @keyframes heatL {
+      0% { transform: translateX(0); }
+      20% { transform: translateX(-4px); }
+      26% { transform: translateX(-2px); }
+      33% { transform: translateX(-5px); }
+      41% { transform: translateX(-3px); }
+      48% { transform: translateX(-6px); }
+      55% { transform: translateX(-2px); }
+      62% { transform: translateX(-5px); }
+      70% { transform: translateX(-3px); }
+      76% { transform: translateX(-4px); }
+      80% { transform: translateX(0); }
+      100% { transform: translateX(0); }
+    }
+    @keyframes heatR {
+      0% { transform: translateX(0); }
+      20% { transform: translateX(4px); }
+      26% { transform: translateX(2px); }
+      33% { transform: translateX(5px); }
+      41% { transform: translateX(3px); }
+      48% { transform: translateX(6px); }
+      55% { transform: translateX(2px); }
+      62% { transform: translateX(5px); }
+      70% { transform: translateX(3px); }
+      76% { transform: translateX(4px); }
+      80% { transform: translateX(0); }
+      100% { transform: translateX(0); }
+    }
+
+    /* Phase 1 & 3: Slow pulse | Phase 2: Hidden */
+    @keyframes idleVis {
+      0% { opacity: 0.3; }
+      5% { opacity: 0.6; }
+      10% { opacity: 1; }
+      15% { opacity: 0.6; }
+      20% { opacity: 0; }
+      80% { opacity: 0.3; }
+      85% { opacity: 0.6; }
+      90% { opacity: 1; }
+      95% { opacity: 0.6; }
+      100% { opacity: 0.3; }
+    }
+
+    /* Phase 2: Active synthesis segments staggered */
+    @keyframes s1Anim {
+      0% { opacity: 0; }
+      20% { opacity: 1; transform: translateX(0); }
+      24% { opacity: 0; transform: translateX(0); }
+      27% { opacity: 1; transform: translateX(-2px); }
+      32% { opacity: 0.5; transform: translateX(3px); }
+      36% { opacity: 1; transform: translateX(0); }
+      41% { opacity: 0; transform: translateX(0); }
+      45% { opacity: 1; transform: translateX(-4px); }
+      49% { opacity: 0.8; transform: translateX(2px); }
+      54% { opacity: 1; transform: translateX(-1px); }
+      58% { opacity: 0; transform: translateX(0); }
+      62% { opacity: 1; transform: translateX(4px); }
+      67% { opacity: 0.6; transform: translateX(0); }
+      72% { opacity: 1; transform: translateX(-3px); }
+      77% { opacity: 0.9; transform: translateX(1px); }
+      80% { opacity: 0; }
+      100% { opacity: 0; }
+    }
+    @keyframes s2Anim {
+      0% { opacity: 0; }
+      20% { opacity: 0.5; transform: translateX(2px); }
+      25% { opacity: 1; transform: translateX(-3px); }
+      29% { opacity: 0; transform: translateX(0); }
+      33% { opacity: 1; transform: translateX(1px); }
+      37% { opacity: 0.7; transform: translateX(4px); }
+      42% { opacity: 1; transform: translateX(-2px); }
+      46% { opacity: 0; transform: translateX(0); }
+      50% { opacity: 1; transform: translateX(3px); }
+      55% { opacity: 0.8; transform: translateX(-4px); }
+      59% { opacity: 1; transform: translateX(0); }
+      64% { opacity: 0; transform: translateX(0); }
+      68% { opacity: 1; transform: translateX(-2px); }
+      73% { opacity: 0.4; transform: translateX(2px); }
+      78% { opacity: 1; transform: translateX(-1px); }
+      80% { opacity: 0; }
+      100% { opacity: 0; }
+    }
+    @keyframes s3Anim {
+      0% { opacity: 0; }
+      20% { opacity: 1; transform: translateX(-3px); }
+      23% { opacity: 0.6; transform: translateX(2px); }
+      28% { opacity: 1; transform: translateX(0); }
+      34% { opacity: 0; transform: translateX(0); }
+      39% { opacity: 1; transform: translateX(-4px); }
+      44% { opacity: 0.5; transform: translateX(3px); }
+      48% { opacity: 1; transform: translateX(1px); }
+      53% { opacity: 0; transform: translateX(0); }
+      57% { opacity: 1; transform: translateX(-2px); }
+      61% { opacity: 0.9; transform: translateX(4px); }
+      66% { opacity: 1; transform: translateX(0); }
+      71% { opacity: 0; transform: translateX(0); }
+      75% { opacity: 1; transform: translateX(-1px); }
+      79% { opacity: 0.8; transform: translateX(2px); }
+      80% { opacity: 0; }
+      100% { opacity: 0; }
+    }
+    @keyframes s4Anim {
+      0% { opacity: 0; }
+      20% { opacity: 0.8; transform: translateX(4px); }
+      26% { opacity: 1; transform: translateX(-2px); }
+      30% { opacity: 0; transform: translateX(0); }
+      35% { opacity: 1; transform: translateX(3px); }
+      40% { opacity: 0.4; transform: translateX(-1px); }
+      43% { opacity: 1; transform: translateX(-4px); }
+      47% { opacity: 0; transform: translateX(0); }
+      51% { opacity: 1; transform: translateX(2px); }
+      56% { opacity: 0.7; transform: translateX(-3px); }
+      60% { opacity: 1; transform: translateX(0); }
+      63% { opacity: 0; transform: translateX(0); }
+      69% { opacity: 1; transform: translateX(1px); }
+      74% { opacity: 0.5; transform: translateX(-2px); }
+      78% { opacity: 1; transform: translateX(3px); }
+      80% { opacity: 0; }
+      100% { opacity: 0; }
+    }
+
+    /* Processing nodes on forehead */
+    @keyframes pAnim {
+      0% { fill: #27272a; }
+      20% { fill: #f97316; }
+      24% { fill: #27272a; }
+      30% { fill: #f97316; }
+      36% { fill: #27272a; }
+      42% { fill: #f97316; }
+      48% { fill: #27272a; }
+      55% { fill: #f97316; }
+      61% { fill: #27272a; }
+      68% { fill: #f97316; }
+      74% { fill: #27272a; }
+      80% { fill: #27272a; }
+      100% { fill: #27272a; }
+    }
+  </style>
+
+  <g class="unit-p">
+    <!-- Base Structural Backplate (Deep Shadow) -->
+    <rect x="15" y="20" width="70" height="60" fill="#27272a"/>
+
+    <!-- Retractable Heatsinks -->
+    <g class="heatsink-left">
+      <rect x="5" y="30" width="10" height="4" fill="#27272a"/>
+      <rect x="5" y="40" width="10" height="4" fill="#27272a"/>
+      <rect x="5" y="50" width="10" height="4" fill="#27272a"/>
+      <rect x="5" y="60" width="10" height="4" fill="#27272a"/>
+    </g>
+    <g class="heatsink-right">
+      <rect x="85" y="30" width="10" height="4" fill="#27272a"/>
+      <rect x="85" y="40" width="10" height="4" fill="#27272a"/>
+      <rect x="85" y="50" width="10" height="4" fill="#27272a"/>
+      <rect x="85" y="60" width="10" height="4" fill="#27272a"/>
+    </g>
+
+    <!-- Main Central Chassis Core -->
+    <rect x="25" y="15" width="50" height="70" fill="#e4e4e7"/>
+
+    <!-- Side Overhang Panels / Temple & Jaw Guards -->
+    <rect x="15" y="25" width="10" height="15" fill="#e4e4e7"/>
+    <rect x="75" y="25" width="10" height="15" fill="#e4e4e7"/>
+    <rect x="15" y="60" width="10" height="15" fill="#e4e4e7"/>
+    <rect x="75" y="60" width="10" height="15" fill="#e4e4e7"/>
+
+    <!-- Top Crown Stepping -->
+    <rect x="30" y="10" width="40" height="5" fill="#e4e4e7"/>
+    <rect x="35" y="5" width="30" height="5" fill="#e4e4e7"/>
+
+    <!-- Bottom Chin Stepping -->
+    <rect x="30" y="85" width="40" height="5" fill="#e4e4e7"/>
+    <rect x="35" y="90" width="30" height="5" fill="#e4e4e7"/>
+
+    <!-- Recessed Mechanical Panel Grooves -->
+    <rect x="25" y="28" width="50" height="2" fill="#27272a"/>
+    <rect x="25" y="70" width="50" height="2" fill="#27272a"/>
+
+    <!-- Main Visor Cavity Base -->
+    <rect x="12" y="42" width="76" height="16" fill="#27272a"/>
+    <!-- Deep Optical Sensor Cavity Background -->
+    <rect x="18" y="44" width="64" height="12" fill="#151518"/>
+
+    <!-- Optical Visor: Phase 1/3 (Idle) -->
+    <!-- Uses slightly darker orange to emphasize "brightening" during Phase 2 -->
+    <rect class="visor-idle" x="20" y="49" width="60" height="2" fill="#ea580c"/>
+
+    <!-- Optical Visor: Phase 2 (Synthesis/Scanning Blocks) -->
+    <g class="visor-proc">
+      <rect class="seg s1" x="22" y="46" width="6" height="8" fill="#f97316"/>
+      <rect class="seg s2" x="32" y="46" width="14" height="8" fill="#f97316"/>
+      <rect class="seg s3" x="50" y="46" width="8" height="8" fill="#f97316"/>
+      <rect class="seg s4" x="62" y="46" width="16" height="8" fill="#f97316"/>
+    </g>
+
+    <!-- Forehead Data Indicator Ports -->
+    <rect class="port p1" x="39" y="18" width="4" height="4"/>
+    <rect class="port p2" x="45" y="18" width="4" height="4"/>
+    <rect class="port p3" x="51" y="18" width="4" height="4"/>
+    <rect class="port p4" x="57" y="18" width="4" height="4"/>
+  </g>
+</svg>
